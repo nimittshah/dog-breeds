@@ -1,0 +1,19 @@
+<div class="main">
+  <h1>Dogs</h1>
+  <div class="data-container">
+    <div class="filter-container">
+      <select (change)="onBreedChange(selectedBreed)" [(ngModel)]="selectedBreed">
+        <option value="" disabled selected>Select a breed</option>
+        <option *ngFor="let breed of breedList | keyvalue" [ngValue]="breed">{{breed.key}}</option>
+      </select>
+      <select [(ngModel)]="selectedSubBreed">
+        <option value="" disabled selected>Select a sub-breed breed</option>
+        <option *ngFor="let subBreed of selectedBreed?.value">{{subBreed}}</option>
+      </select>
+      <button type="submit" (click)="getImage()">Get Image</button>
+      <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+    </div>
+    <div class="image-container">
+      <img [src]="selectedImage">
+    </div>
+  </div>

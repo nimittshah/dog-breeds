@@ -1,0 +1,22 @@
+
+.data-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    .image-container{
+        width: 200px;
+        min-height: 200px;
+        border:1px solid black;
+        border-radius: 4px;
+        background-color: #f2f2f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        & img{
+            max-width: 200px;
+            height: auto;
+        }
+    }
+}
